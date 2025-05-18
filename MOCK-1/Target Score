@@ -1,0 +1,28 @@
+Leetcode 2139
+
+key idea:
+    -> try to come from back means try to start from target and reach one
+    ->if target is odd then used x=x-1 operation 
+    -> maxDoubles>0 and target is even x=x/2 
+     
+
+
+int minMoves(int target, int maxDoubles) {
+         
+          int res=0;
+
+         //run until you have maxsoubles operations have if there is no maxdoubles operation then directly add remaining number of target instead going one by one step
+          while(target && maxDoubles){
+          
+            if(target%2){
+                target--;
+             }
+             else{
+                --maxDoubles;
+                target/=2;
+             }
+             res++;
+          }
+
+          return res+target-1;
+    }
