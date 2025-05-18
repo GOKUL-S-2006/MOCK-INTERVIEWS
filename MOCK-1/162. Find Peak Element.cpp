@@ -44,7 +44,7 @@ int peakElement(vector<int> &arr) {
         return n - 1;
     
     // Search Space for binary Search
-    int lo = 1, hi = n - 2;
+    int lo = 1, hi = n - 1;
     
     while(lo <= hi) {
         int mid = lo + (hi - lo)/2;
@@ -62,7 +62,7 @@ int peakElement(vector<int> &arr) {
             
         // Otherwise, it will exist in left subarray
         else
-            hi = mid - 1;
+            hi = mid;
     }
     
     return 0;
